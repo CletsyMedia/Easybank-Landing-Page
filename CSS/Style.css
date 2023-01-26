@@ -20,9 +20,174 @@
     --Very-Light-Gray: hsl(0, 0%, 98%);
     --White: hsl(0, 0%, 100%);
   }
+  .btn{
+    background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
+    background-image: linear-gradient(to right, #31d35c, #2bb7da);
+    /* background-image:linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%)); */
+    border: none;
+    outline: none;
+    padding:.8rem 1.6rem;
+    color:var(--White);
+    cursor: pointer;
+    border-radius:25px;
+    -webkit-transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out;
+  }
+  .btn:hover{
+    background-image: -webkit-gradient(linear, left top, right top, from(#2bb7da), to(#31d35c));
+    background-image: linear-gradient(to right, #2bb7da, #31d35c);
+  }
+  
   /* Global styles  Ends*/
 
   body{
     font-family:"Public Sans" sans-serif;
     font-size: 18px;
+  }
+  header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 25px 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  }
+  .header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    padding: 0 10rem;
+  }
+  ul{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  ul li{
+    margin-right:1rem;
+  }
+  ul li a{
+    position: relative;
+    display: inline-block;
+    color:var(--Grayish-Blue);
+  }
+  /* underline link(active) using psuedo element */
+  li a::after{
+  content: '';
+  width:100%;
+  height: 2px;
+  background-color: var(--Lime-Green);
+  position: absolute;
+  bottom:-36px;
+  left:0;
+  transition:transform .5s;
+  transform: scaleX(0);
+  transform-origin:right;  
+}
+  li a:hover::after{
+  transform: scaleX(1);
+  transform-origin:left;
+}
+li a:hover{
+  color: var(--Dark-Blue);
+}
+/* underline link(active) using psuedo element ends */
+  .mobileMenu{
+    display: none;
+  }
+
+
+
+
+
+
+
+  @media(max-width:950px){
+    .header{
+      padding: 0 4rem;
+    }
+  }
+
+  @media(max-width:769px){
+    li a::after{
+      display: none;
+    }
+    li a:hover{
+      color: var(--Lime-Green);
+    }
+    .btn-nav{
+      display: none;
+    }
+    .mobileMenu{
+      font-size: 2rem;
+      cursor: pointer;
+      display: block;
+    }
+    .hamburger:hover{
+      color: #31d35c;
+    }
+    .header{
+      padding: 0 3rem;
+    }
+    nav{
+      position: absolute;
+      border-radius:5px;
+      left:0;
+      top:-101rem;
+      width: 100%; 
+    }
+    nav::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100vh;
+      top:2.78rem;
+      background-color:rgba(99, 99, 99, 0.2);
+    }
+    nav ul{
+      position: absolute;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      background-color: var(--White);
+      border-radius:5px;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width:90%;
+      height:35vh;
+      top:4rem;
+      left:50%;
+      padding: 0;
+      transform: translateX(-50%);
+    }
+    nav ul li{
+      margin-bottom:1rem;
+    }
+    /*
+    ul{
+      
+      flex-direction: column;
+      padding:1.4rem 0;
+    }
+    li{
+      margin:.5rem 0;
+    }
+    nav::before{
+      content: '';
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      top:4.4rem;
+      background-color:rgba(99, 99, 99, 0.2);
+    } */
+    /* Active States */
+    nav.activeState{
+      top:1.1rem;
+    }
   }
