@@ -6,6 +6,19 @@
     transition: all .5s linear;
   }
   /* Global styles */
+  h1{
+    color:var(--Dark-Blue);
+    font-size:3rem;
+    font-weight: 300;
+  }
+  p{
+    color:var(--Grayish-Blue);
+    line-height: 1.5;
+  }
+  img{
+    max-width:100%;
+    display: block;
+  }
   :root{
     /* ### Primary */
 
@@ -23,7 +36,6 @@
   .btn{
     background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
     background-image: linear-gradient(to right, #31d35c, #2bb7da);
-    /* background-image:linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%)); */
     border: none;
     outline: none;
     padding:.8rem 1.6rem;
@@ -41,8 +53,10 @@
   /* Global styles  Ends*/
 
   body{
+    position: relative;
     font-family:"Public Sans" sans-serif;
     font-size: 18px;
+    overflow-x: hidden;
   }
   header{
     position: fixed;
@@ -52,6 +66,8 @@
     top: 0;
     left: 0;
     padding: 25px 0;
+    z-index:99;
+    background-color:var(--White);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
   }
@@ -70,7 +86,7 @@
     padding: 0;
   }
   ul li{
-    margin-right:1rem;
+    margin-right:1.5rem;
   }
   ul li a{
     position: relative;
@@ -98,14 +114,102 @@ li a:hover{
   color: var(--Dark-Blue);
 }
 /* underline link(active) using psuedo element ends */
-  .mobileMenu{
+.mobileMenu{
     display: none;
-  }
+}
+main{
+  position: relative;
+  z-index:19s;
+}
+.pattern::before{
+  position: absolute;
+  content: '';
+  background-image: url(../images/bg-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-position:top right;
+  background-size:1000px;
+  top:-5rem;
+  right:-10rem;
+  height:1000px;
+  width: 1000px;
+  z-index: -1;
+}
+.container{
+  display: flex;
+  padding:0 0 0 10rem;
+  align-items:flex-start;
+  justify-content:flex-start;
+}
+.container .heroleft{
+  max-width:50%;
+}
+.heroleft{
+  padding-top:180px;
+}
+.heroleft h1{
+  width:60%;
+}
+.heroleft p{
+  width:60%;
+}
+.heroright{
+  position: absolute;
+  right:-9rem;
+  top:-2.5rem;
+}
 
-
-
-
-
+/* choose */
+.choose{
+  background-color: var(--Very-Light-Gray);
+  margin:15rem 0;
+}
+.wrapper{
+  padding:5rem 10rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap:5rem;
+}
+.chooseHead{
+  width:50%;
+}
+.chooseHead h1{
+  font-size:2.5rem;
+}
+.chooseInfo{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:1.5rem;
+}
+.boxes h1{
+  font-size:1.5rem;
+}
+/* Feayures */
+.features{
+  padding:0 10rem 5rem 10rem;
+}
+.features h1{
+  margin-top: 0;
+}
+.boxImg{
+  width:350px;
+  height:500px;
+  background-color: #fff;
+  border-radius:5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.boxImg img{
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+}
+.boxInfo{
+  margin:2rem;
+}
+.boxInfo h3,
+.boxInfo p,
+.boxInfo h5{
+  margin: 0;
+}
 
 
   @media(max-width:950px){
