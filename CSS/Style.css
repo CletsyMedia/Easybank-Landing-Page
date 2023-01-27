@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
-*{
+*{  
+    margin: 0;
+    padding: 0;
     box-sizing:border-box;
     list-style-type: none;
     text-decoration: none;
@@ -10,10 +12,12 @@
     color:var(--Dark-Blue);
     font-size:3rem;
     font-weight: 300;
+    margin-bottom: 1rem;
   }
   p{
     color:var(--Grayish-Blue);
     line-height: 1.5;
+    margin-bottom:1.5rem;
   }
   img{
     max-width:100%;
@@ -140,8 +144,8 @@ main{
   align-items:flex-start;
   justify-content:flex-start;
 }
-.container .heroleft{
-  max-width:50%;
+.heroleft{
+  width:50%;
 }
 .heroleft{
   padding-top:180px;
@@ -161,7 +165,7 @@ main{
 /* choose */
 .choose{
   background-color: var(--Very-Light-Gray);
-  margin:15rem 0 6rem 0;
+  margin:8rem 0 6rem 0;
 }
 .wrapper{
   padding:5rem 8rem;
@@ -181,6 +185,12 @@ main{
   grid-template-columns: repeat(4, 1fr);
   gap:1.5rem;
 }
+.boxes{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
 .boxes h1{
   font-size:1.5rem;
 }
@@ -190,6 +200,7 @@ main{
 }
 .features h1{
   margin-top: 0;
+  margin-bottom:3rem;
 }
 .boxImg{
   width:370px;
@@ -206,7 +217,7 @@ main{
   margin:2.5rem 2rem;
 }
 .Img{
-  width: 300px;
+  width:100%;
   height:200px;
 }
 .Img img{
@@ -299,25 +310,127 @@ main{
     nav ul li{
       margin-bottom:1rem;
     }
-    /*
-    ul{
-      
+    .pattern::before{
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size:1000px;
+      width:100%;
+      height:900px;
+      top: -18.5rem;
+      right:0;
+    }
+    .container{
+      padding:0 3rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .heroleft{
+      display: flex;
+      align-items: center;
       flex-direction: column;
-      padding:1.4rem 0;
-    }
-    li{
-      margin:.5rem 0;
-    }
-    nav::before{
-      content: '';
-      position: absolute;
-      height: 100vh;
       width: 100%;
-      top:4.4rem;
-      background-color:rgba(99, 99, 99, 0.2);
-    } */
+      gap:2rem;
+      margin-top: 33rem;
+    }
+    .heroleft h1,
+    .heroleft p{
+      width: 100%;
+      text-align: center;
+    }
+    .heroright{
+      left:10%;
+      top:-2.5rem;
+      width: 80%;
+    }
+    .heroright img{
+    }
+    .wrapper{
+      padding: 2rem 3rem;
+    }
+    .chooseInfo{
+      grid-template-columns: repeat(2, 1fr);
+      gap:1.5rem;
+    }
+    .features{
+      padding: 0 3rem 3rem 3rem;
+    }
+    .boxFeatures{
+      flex-wrap: wrap;
+    }
+    .boxImg{
+      flex:1 1 15rem;
+    }
+    .boxInfo {
+      margin: 2.5rem 1.5rem;
+    }
+    .chooseHead {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap:1.4rem;
+      text-align: center;
+      width:100%;
+    }
+    .boxes{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap:1.4rem;
+    }
+    .features h1{
+      margin-bottom: 2.5rem;
+    }
     /* Active States */
     nav.activeState{
       top:1.1rem;
+    }
+  }
+  @media(max-width:640px){
+    .header{
+      padding:0 1.5rem;
+    }
+    .wrapper{
+      padding: 2rem 1.5rem;
+    }
+    .features {
+      padding: 0 1.5rem 3rem 1.5rem;
+  }
+    .pattern::before{
+      background-image: url(../images/bg-intro-mobile.svg);
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size:500px;
+      width:490px;
+      height:470px;
+      top: -1.5rem;
+      right:0;
+    }
+    .heroleft{
+      margin-top:15rem;
+    }
+    .heroleft h1{
+      font-size: 2rem;
+    }
+    .heroright {
+      top: 1.5rem;
+      width:70%;
+      left:14%;
+   }
+    .chooseInfo {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .chooseHead h1{
+      font-size: 2rem;
+    }
+    .boxes{
+      align-items: center;
+      justify-content: center;
+    }
+    .boxes p{
+      text-align: center;
+    }
+    .features h1{
+      text-align: center;
+      font-size:2rem;
     }
   }
